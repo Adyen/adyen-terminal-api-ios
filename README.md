@@ -57,7 +57,7 @@ To create a `SaleToPOIRequest` do the following:
     let message = Message(header: header, body: paymentRequest)
 ```
 4. Encode the `message` to JSON and send it to the appropriate [endpoint](https://docs.adyen.com/point-of-sale/terminal-api-fundamentals#endpoints). TerminalAPIKit provides a `Coder` class to help with the JSON encoding and decoding.
-```
+```swift
     let jsonData = try Coder.encode(message)
 ```
 
