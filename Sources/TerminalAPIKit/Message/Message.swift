@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// A message that can be sent to or received from a Nexo device.
+/// A message that can be sent to or received from a Terminal API device.
 public final class Message<MessageBodyType: MessageBody>: Codable {
     
     /// The header of the message.

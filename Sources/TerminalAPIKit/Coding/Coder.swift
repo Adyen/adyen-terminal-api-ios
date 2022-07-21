@@ -7,14 +7,14 @@
 
 import Foundation
 
-/// Performs encoding and decoding for Nexo data classes.
+/// Performs encoding and decoding for Terminal API data classes.
 public final class Coder {
     
     private init() {}
     
     // MARK: - Encoding
     
-    /// Encodes the given value to be sent in a Nexo request.
+    /// Encodes the given value to be sent in a Terminal API request.
     ///
     /// - Parameter value: The value to encode.
     /// - Returns: The encoded data.
@@ -37,7 +37,7 @@ public final class Coder {
     
     // MARK: - Decoding
     
-    /// Decodes a value of the given type from the given data retrieved in a Nexo response.
+    /// Decodes a value of the given type from the given data retrieved in a Terminal API response.
     ///
     /// - Parameters:
     ///   - type: The type of the value to decode.

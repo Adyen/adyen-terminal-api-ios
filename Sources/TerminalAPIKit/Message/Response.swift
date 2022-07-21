@@ -7,5 +7,5 @@
 
 import Foundation
 
-/// Instances of conforming types represent a respone received fromg a Nexo device.
+/// Instances of conforming types represent a respone received fromg a Terminal API device.
 public protocol Response: MessageBody {}

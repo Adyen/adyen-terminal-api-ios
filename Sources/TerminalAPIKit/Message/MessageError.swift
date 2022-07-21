@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// An error that was received from a Nexo device after a message was sent.
+/// An error that was received from a Terminal API device after a message was sent.
 internal final class MessageError: Codable {
     
     /// An array of errors that occurred.
@@ -37,7 +37,7 @@ extension MessageError: LocalizedError {
     var errorDescription: String? {
         let components = [errorsDescription, warningsDescription].compactMap { $0 }
         guard !components.isEmpty else {
-            return "Unknown Nexo error."
+            return "Unknown Terminal API error."
         }
         
         return components.joined(separator: "\n\n")
