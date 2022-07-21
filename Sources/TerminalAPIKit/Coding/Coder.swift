@@ -8,9 +8,7 @@
 import Foundation
 
 /// Performs encoding and decoding for Terminal API data classes.
-public final class Coder {
-    
-    private init() {}
+public enum Coder {
     
     // MARK: - Encoding
     
