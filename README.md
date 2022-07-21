@@ -67,7 +67,7 @@ Once you have obtained a response from one of the [endpoints](https://docs.adyen
 ```swift
     let message = try Coder.decode(Message<PaymentResponse>.self, from: response)
 ```
-The message object has a type of `Message<PaymentResponse` that represents [SaleToPOIResponse]`https://docs.adyen.com/point-of-sale/terminal-api-fundamentals#responses`.The `header` and `body` properties of the `message` represent [MessageHeader](https://docs.adyen.com/point-of-sale/terminal-api-reference#comadyennexomessageheader) and [PaymentResponse](https://docs.adyen.com/point-of-sale/terminal-api-reference#comadyennexopaymentresponse) respectively.
+The message object has a type of `Message<PaymentResponse>` that represents [SaleToPOIResponse](https://docs.adyen.com/point-of-sale/terminal-api-fundamentals#responses). The `header` and `body` properties of the `message` represent [MessageHeader](https://docs.adyen.com/point-of-sale/terminal-api-reference#comadyennexomessageheader) and [PaymentResponse](https://docs.adyen.com/point-of-sale/terminal-api-reference#comadyennexopaymentresponse) respectively.
 
 ## Requirements
 
