@@ -11,7 +11,7 @@ TerminalAPIKit for iOS is available through [Swift Package Manager](https://swif
 1. Follow Apple's [Adding Package Dependencies to Your App](
 https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app
 ) guide on how to add a Swift Package dependency.
-2. Use `https://github.com/Adyen/adyen-networking-ios` as the repository URL.
+2. Use `https://github.com/Adyen/adyen-terminal-api-ios` as the repository URL.
 3. Specify the version to be at least `1.0.0`.
 
 ## Usage
