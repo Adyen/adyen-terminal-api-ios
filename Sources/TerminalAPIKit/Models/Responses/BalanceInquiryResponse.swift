@@ -32,7 +32,12 @@ public final class BalanceInquiryResponse: Response {
     /// - Parameter paymentAccountStatus: Data related to the result of a Balance Inquiry request.
     /// - Parameter loyaltyAccountStatus: Data related to the result of a loyalty Balance Inquiry.
     /// - Parameter paymentReceipt: Undocumented.
-    internal init(response: MessageResponse, paymentAccountStatus: PaymentAccountStatus? = nil, loyaltyAccountStatus: LoyaltyAccountStatus? = nil, paymentReceipt: [PaymentReceipt]? = nil) {
+    public init(
+        response: MessageResponse,
+        paymentAccountStatus: PaymentAccountStatus? = nil,
+        loyaltyAccountStatus: LoyaltyAccountStatus? = nil,
+        paymentReceipt: [PaymentReceipt]? = nil
+    ) {
         self.response = response
         self.paymentAccountStatus = paymentAccountStatus
         self.loyaltyAccountStatus = loyaltyAccountStatus

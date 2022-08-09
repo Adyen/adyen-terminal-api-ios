@@ -36,7 +36,13 @@ public final class StoredValueResponse: Response {
     /// - Parameter poiData: Data related to the POI System.
     /// - Parameter storedValueResult: Result of loading/reloading a stored value card..
     /// - Parameter paymentReceipt: Undocumented.
-    internal init(response: MessageResponse, saleData: SaleData, poiData: POIData, storedValueResult: [StoredValueResult]? = nil, paymentReceipt: [PaymentReceipt]? = nil) {
+    public init(
+        response: MessageResponse,
+        saleData: SaleData,
+        poiData: POIData,
+        storedValueResult: [StoredValueResult]? = nil,
+        paymentReceipt: [PaymentReceipt]? = nil
+    ) {
         self.response = response
         self.saleData = saleData
         self.poiData = poiData

@@ -24,7 +24,7 @@ public final class PrintResponse: Response {
     ///
     /// - Parameter documentQualifier: Qualification of the document to print to the Cashier or the Customer.
     /// - Parameter response: Result of a message request processing.
-    internal init(documentQualifier: DocumentQualifier, response: MessageResponse) {
+    public init(documentQualifier: DocumentQualifier, response: MessageResponse) {
         self.documentQualifier = documentQualifier
         self.response = response
     }

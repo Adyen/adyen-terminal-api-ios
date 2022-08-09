@@ -40,7 +40,14 @@ public final class ReversalResponse: Response {
     /// - Parameter reversedAmount: Amount of the payment or loyalty to reverse..
     /// - Parameter customerOrder: Undocumented.
     /// - Parameter paymentReceipt: Undocumented.
-    internal init(response: MessageResponse, poiData: POIData? = nil, originalPOITransaction: OriginalPOITransaction? = nil, reversedAmount: Double? = nil, customerOrder: [CustomerOrder]? = nil, paymentReceipt: [PaymentReceipt]? = nil) {
+    public init(
+        response: MessageResponse,
+        poiData: POIData? = nil,
+        originalPOITransaction: OriginalPOITransaction? = nil,
+        reversedAmount: Double? = nil,
+        customerOrder: [CustomerOrder]? = nil,
+        paymentReceipt: [PaymentReceipt]? = nil
+    ) {
         self.response = response
         self.poiData = poiData
         self.originalPOITransaction = originalPOITransaction

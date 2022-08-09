@@ -24,7 +24,7 @@ public final class InputResponse: Response {
     ///
     /// - Parameter outputResult: Information related to the result the output (display, print, input).
     /// - Parameter inputResult: Information related to the result the input.
-    internal init(outputResult: OutputResult? = nil, inputResult: InputResult) {
+    public init(outputResult: OutputResult? = nil, inputResult: InputResult) {
         self.outputResult = outputResult
         self.inputResult = inputResult
     }

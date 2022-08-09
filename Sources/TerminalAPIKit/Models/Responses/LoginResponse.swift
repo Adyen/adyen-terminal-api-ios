@@ -32,7 +32,12 @@ public final class LoginResponse: Response {
     /// - Parameter poiSystemData: Information related to the POI System
     /// - Parameter tokenRequestStatus: Undocumented.
     /// - Parameter customerOrderStatus: Undocumented.
-    internal init(response: MessageResponse, poiSystemData: POISystemData? = nil, tokenRequestStatus: Bool? = nil, customerOrderStatus: Bool? = nil) {
+    public init(
+        response: MessageResponse,
+        poiSystemData: POISystemData? = nil, tokenRequestStatus:
+        Bool? = nil,
+        customerOrderStatus: Bool? = nil
+    ) {
         self.response = response
         self.poiSystemData = poiSystemData
         self.tokenRequestStatus = tokenRequestStatus
