@@ -44,7 +44,15 @@ public final class PaymentResponse: Response {
     /// - Parameter loyaltyResult: Data related to the result of a processed loyalty transaction.
     /// - Parameter paymentReceipt: Undocumented.
     /// - Parameter customerOrder: Undocumented.
-    internal init(response: MessageResponse, saleData: SaleData, poiData: POIData?, paymentResult: PaymentResult? = nil, loyaltyResult: [LoyaltyResult]? = nil, paymentReceipt: [PaymentReceipt]? = nil, customerOrder: [CustomerOrder]? = nil) {
+    public init(
+        response: MessageResponse,
+        saleData: SaleData,
+        poiData: POIData?,
+        paymentResult: PaymentResult? = nil,
+        loyaltyResult: [LoyaltyResult]? = nil,
+        paymentReceipt: [PaymentReceipt]? = nil,
+        customerOrder: [CustomerOrder]? = nil
+    ) {
         self.response = response
         self.saleData = saleData
         self.poiData = poiData

@@ -28,7 +28,11 @@ public final class GetTotalsResponse: Response {
     /// - Parameter response: Result of a message request processing.
     /// - Parameter poiReconciliationIdentifier: Identification of the reconciliation period between Sale and POI.
     /// - Parameter transactionTotals: Result of the Sale to POI Reconciliation processing.
-    internal init(response: MessageResponse, poiReconciliationIdentifier: String, transactionTotals: [TransactionTotals]? = nil) {
+    public init(
+        response: MessageResponse,
+        poiReconciliationIdentifier: String,
+        transactionTotals: [TransactionTotals]? = nil
+    ) {
         self.response = response
         self.poiReconciliationIdentifier = poiReconciliationIdentifier
         self.transactionTotals = transactionTotals
