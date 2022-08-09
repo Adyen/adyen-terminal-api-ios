@@ -20,7 +20,7 @@ public final class EnableServiceResponse: Response {
     /// Initializes the EnableServiceResponse.
     ///
     /// - Parameter response: Result of a message request processing.
-    internal init(response: MessageResponse) {
+    public init(response: MessageResponse) {
         self.response = response
     }
     

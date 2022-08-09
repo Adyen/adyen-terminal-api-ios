@@ -32,7 +32,12 @@ public final class DiagnosisResponse: Response {
     /// - Parameter loggedSaleIdentifier: Sale Terminal logged to.
     /// - Parameter poiStatus: State of a POI Terminal.
     /// - Parameter hostStatus: State of a Host.
-    internal init(response: MessageResponse, loggedSaleIdentifier: [String]? = nil, poiStatus: POIStatus? = nil, hostStatus: [HostStatus]? = nil) {
+    public init(
+        response: MessageResponse,
+        loggedSaleIdentifier: [String]? = nil,
+        poiStatus: POIStatus? = nil,
+        hostStatus: [HostStatus]? = nil
+    ) {
         self.response = response
         self.loggedSaleIdentifier = loggedSaleIdentifier
         self.poiStatus = poiStatus
