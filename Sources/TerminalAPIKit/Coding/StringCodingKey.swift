@@ -22,9 +22,9 @@ internal extension StringCodingKey {
     
     init(for type: MessageType) {
         switch type {
-        case .request:
+        case .request, .notification:
             self.init(value: "SaleToPOIRequest")
-        case .response, .notification:
+        case .response:
             self.init(value: "SaleToPOIResponse")
         }
     }
