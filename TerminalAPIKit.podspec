@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TerminalAPIKit'
-  s.version = '1.1.0'
+  s.version = '1.2.0'
   s.summary = "Adyen Terminal API for iOS"
   s.description = <<-DESC
     TerminalAPIKit for iOS helps with integrating Adyen's Terminal API into your iOS POS app.
