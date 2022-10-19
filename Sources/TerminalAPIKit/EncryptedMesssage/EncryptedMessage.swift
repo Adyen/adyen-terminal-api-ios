@@ -37,7 +37,7 @@ public final class EncryptedMessage: Codable {
     ///
     /// - Parameter decoder: The decoder to read data from.
     public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: StringCodingKey.self)
         
         guard let subcontainerKey = container.allKeys.first else {
             let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Empty container.")
@@ -45,10 +45,10 @@ public final class EncryptedMessage: Codable {
             throw DecodingError.dataCorrupted(context)
         }
         
-        let subcontainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: subcontainerKey)
-        header = try subcontainer.decode(MessageHeader.self, forKey: .header)
-        body = try subcontainer.decode(Data.self, forKey: .body)
-        securityTrailer = try subcontainer.decode(SecurityTrailer.self, forKey: .securityTrailer)
+        let subcontainer = try container.nestedContainer(keyedBy: StringCodingKey.self, forKey: subcontainerKey)
+        header = try subcontainer.decode(MessageHeader.self, forKey: "MessageHeader")
+        body = try subcontainer.decode(Data.self, forKey: "NexoBlob")
+        securityTrailer = try subcontainer.decode(SecurityTrailer.self, forKey: "SecurityTrailer")
     }
     
     /// Encodes the encrypted message into the given encoder.
@@ -62,12 +62,6 @@ public final class EncryptedMessage: Codable {
         try nestedContainer.encode(header, forKey: "MessageHeader")
         try nestedContainer.encode(body, forKey: "NexoBlob")
         try nestedContainer.encode(securityTrailer, forKey: "SecurityTrailer")
-    }
-    
-    internal enum CodingKeys: String, CodingKey {
-        case header = "MessageHeader"
-        case body = "NexoBlob"
-        case securityTrailer = "SecurityTrailer"
     }
     
 }
