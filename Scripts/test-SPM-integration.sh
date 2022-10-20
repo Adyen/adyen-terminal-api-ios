@@ -29,3 +29,4 @@ echo_header "Build"
 
 swift package clean
 swift build
+swift test
