@@ -35,33 +35,27 @@ public func aes(
     }
     
     var outputLength = operation.outputLength(forInputLength: input.count)
-    var output = Data(count: outputLength)
+    var outputBytes: [UInt8] = .init(repeating: 0, count: outputLength)
     
-    let status = output.withUnsafeMutableBytes { outputPointer in
-        input.withUnsafeBytes { inputPointer in
-            key.withUnsafeBytes { keyPointer in
-                initializationVector.withUnsafeBytes { ivPointer in
-                    CCCrypt(operation.ccOperation,
-                            CCAlgorithm(kCCAlgorithmAES),
-                            CCOptions(kCCOptionPKCS7Padding),
-                            keyPointer.baseAddress,
-                            key.count,
-                            ivPointer.baseAddress,
-                            inputPointer.baseAddress,
-                            input.count,
-                            outputPointer.baseAddress,
-                            outputLength,
-                            &outputLength)
-                }
-            }
-        }
-    }
+    let status = CCCrypt(
+        operation.ccOperation,
+        CCAlgorithm(kCCAlgorithmAES),
+        CCOptions(kCCOptionPKCS7Padding),
+        key.bytes,
+        key.count,
+        initializationVector.bytes,
+        input.bytes,
+        input.count,
+        &outputBytes,
+        outputLength,
+        &outputLength
+    )
     
     guard status == kCCSuccess else {
         throw AESError.operationError(status: status)
     }
     
-    return output.prefix(upTo: outputLength)
+    return Data(outputBytes.prefix(upTo: outputLength))
 }
 
 /// The operation to perform.
