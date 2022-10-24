@@ -43,9 +43,6 @@ public final class SaleData: Codable {
     
     /// Sale information intended for the Issuer.
     public let saleToIssuerData: SaleToIssuerData?
-
-    /// Sale information intended for the Acquirer.
-    public let saleToAcquirerData: String?
     
     /// Initializes the SaleData.
     ///
@@ -60,8 +57,7 @@ public final class SaleData: Codable {
     /// - Parameter customerOrderReq: Undocumented.
     /// - Parameter saleToPOIData: Sale information intended for the POI.
     /// - Parameter saleToIssuerData: Sale information intended for the Issuer.
-    /// - Parameter saleToAcquirerData: Sale information intended for the Acquirer.
-    public init(operatorIdentifier: String? = nil, operatorLanguage: String? = nil, shiftNumber: String? = nil, saleTransactionIdentifier: TransactionIdentifier, saleReferenceIdentifier: String? = nil, saleTerminalData: SaleTerminalData? = nil, tokenRequestedType: TokenRequestedType? = nil, customerOrderIdentifier: String? = nil, customerOrderReq: Set<CustomerOrderReq>? = nil, saleToPOIData: String? = nil, saleToIssuerData: SaleToIssuerData? = nil, saleToAcquirerData: String? = nil) {
+    public init(operatorIdentifier: String? = nil, operatorLanguage: String? = nil, shiftNumber: String? = nil, saleTransactionIdentifier: TransactionIdentifier, saleReferenceIdentifier: String? = nil, saleTerminalData: SaleTerminalData? = nil, tokenRequestedType: TokenRequestedType? = nil, customerOrderIdentifier: String? = nil, customerOrderReq: Set<CustomerOrderReq>? = nil, saleToPOIData: String? = nil, saleToIssuerData: SaleToIssuerData? = nil) {
         self.operatorIdentifier = operatorIdentifier
         self.operatorLanguage = operatorLanguage
         self.shiftNumber = shiftNumber
@@ -73,7 +69,6 @@ public final class SaleData: Codable {
         self.customerOrderReq = customerOrderReq
         self.saleToPOIData = saleToPOIData
         self.saleToIssuerData = saleToIssuerData
-        self.saleToAcquirerData = saleToAcquirerData
     }
     
     internal enum CodingKeys: String, CodingKey {
@@ -88,7 +83,6 @@ public final class SaleData: Codable {
         case customerOrderReq = "CustomerOrderReq"
         case saleToPOIData = "SaleToPOIData"
         case saleToIssuerData = "SaleToIssuerData"
-        case saleToAcquirerData = "SaleToAcquirerData"
     }
     
 }
