@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TerminalAPIKit'
-  s.version = '1.3.0'
+  s.version = '1.2.0'
   s.summary = "Adyen Terminal API for iOS"
   s.description = <<-DESC
     TerminalAPIKit for iOS helps with integrating Adyen's Terminal API into your iOS POS app.
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/Adyen/adyen-terminal-api-ios', :tag => "#{s.version}" }
   s.platform = :ios
   s.ios.deployment_target = '13.0'
-  s.swift_version = '5.5'
+  s.swift_version = '5.6'
   s.frameworks = 'Foundation'
   s.source_files = 'Sources/TerminalAPIKit/**/*.swift'
 end
