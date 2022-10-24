@@ -28,11 +28,7 @@ public final class TransactionStatusResponse: Response {
     /// - Parameter response: Result of a message request processing.
     /// - Parameter messageReference: Identification of a previous POI transaction.
     /// - Parameter repeatedMessageResponse: Content of the requested Message Response.
-    public init(
-        response: MessageResponse,
-        messageReference: MessageReference? = nil,
-        repeatedMessageResponse: RepeatedMessageResponse? = nil
-    ) {
+    internal init(response: MessageResponse, messageReference: MessageReference? = nil, repeatedMessageResponse: RepeatedMessageResponse? = nil) {
         self.response = response
         self.messageReference = messageReference
         self.repeatedMessageResponse = repeatedMessageResponse

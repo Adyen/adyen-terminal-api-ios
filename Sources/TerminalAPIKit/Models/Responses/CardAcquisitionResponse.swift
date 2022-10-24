@@ -40,14 +40,7 @@ public final class CardAcquisitionResponse: Response {
     /// - Parameter customerLanguage: Undocumented.
     /// - Parameter paymentBrand: Type of payment card
     /// - Parameter paymentInstrumentData: Data related to the instrument of payment for the transaction.
-    public init(
-        response: MessageResponse,
-        saleData: SaleData,
-        poiData: POIData,
-        customerLanguage: String? = nil,
-        paymentBrand: [String]? = nil,
-        paymentInstrumentData: PaymentInstrumentData? = nil
-    ) {
+    internal init(response: MessageResponse, saleData: SaleData, poiData: POIData, customerLanguage: String? = nil, paymentBrand: [String]? = nil, paymentInstrumentData: PaymentInstrumentData? = nil) {
         self.response = response
         self.saleData = saleData
         self.poiData = poiData

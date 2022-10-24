@@ -20,7 +20,7 @@ public final class AdminResponse: Response {
     /// Initializes the AdminResponse.
     ///
     /// - Parameter response: Result of a message request processing.
-    public init(response: MessageResponse) {
+    internal init(response: MessageResponse) {
         self.response = response
     }
     

@@ -32,12 +32,7 @@ public final class ReconciliationResponse: Response {
     /// - Parameter reconciliationType: Type of Reconciliation requested by the Sale to the POI.
     /// - Parameter poiReconciliationIdentifier: Identification of the reconciliation period between Sale and POI.
     /// - Parameter transactionTotals: Result of the Sale to POI Reconciliation processing.
-    public init(
-        response: MessageResponse,
-        reconciliationType: ReconciliationType,
-        poiReconciliationIdentifier: String? = nil,
-        transactionTotals: [TransactionTotals]? = nil
-    ) {
+    internal init(response: MessageResponse, reconciliationType: ReconciliationType, poiReconciliationIdentifier: String? = nil, transactionTotals: [TransactionTotals]? = nil) {
         self.response = response
         self.reconciliationType = reconciliationType
         self.poiReconciliationIdentifier = poiReconciliationIdentifier

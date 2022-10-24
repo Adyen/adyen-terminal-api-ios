@@ -20,7 +20,7 @@ public final class DisplayResponse: Response {
     /// Initializes the DisplayResponse.
     ///
     /// - Parameter outputResult: Information related to the result the output (display, print, input).
-    public init(outputResult: [OutputResult]) {
+    internal init(outputResult: [OutputResult]) {
         self.outputResult = outputResult
     }
     
