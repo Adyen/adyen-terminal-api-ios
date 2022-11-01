@@ -30,10 +30,20 @@ final class EncryptedMessageTests: XCTestCase {
         
         return .init(identifier: "TestKey", version: 0, data: data)
     }
-
-    func testMessageEncryptionDecryption() throws {
-        let key = generateTestKey()
+    
+    func deriveTestKey() throws -> EncryptionKey {
+        let passphrase = "Some passpharse"
+        let keyIdentifier = "Some key identifier"
+        let keyVersion: UInt = 0
         
+        return try .init(
+            passphrase: passphrase,
+            identifier: keyIdentifier,
+            version: keyVersion
+        )
+    }
+    
+    func createPaymentRequest() throws -> Message<PaymentRequest> {
         let request: PaymentRequest = .init(
             saleData: .init(
                 saleTransactionIdentifier: .init(
@@ -49,7 +59,7 @@ final class EncryptedMessageTests: XCTestCase {
             )
         )
         
-        let initialMessage: Message<PaymentRequest> = .init(
+        return .init(
             header: .init(
                 for: request,
                 saleIdentifier: UUID().uuidString,
@@ -57,7 +67,10 @@ final class EncryptedMessageTests: XCTestCase {
             ),
             body: request
         )
-        
+    }
+    
+    func validateMessageEncryption(using key: EncryptionKey) throws {
+        let initialMessage = try createPaymentRequest()
         let encodedInitialMessage = try Coder.encode(initialMessage)
         let encryptedMessage: EncryptedMessage = try initialMessage.encrypt(using: key)
         let encodedEncryptedMessage: Data = try Coder.encode(encryptedMessage)
@@ -66,6 +79,14 @@ final class EncryptedMessageTests: XCTestCase {
         let encodedDecryptedMessage = try Coder.encode(decryptedMessage)
         
         XCTAssertEqual(encodedInitialMessage, encodedDecryptedMessage)
+    }
+
+    func testMessageEncryptionDecryptionWithGeneratedKey() throws {
+        try validateMessageEncryption(using: generateTestKey())
+    }
+    
+    func testMessageEncryptionDecryptionWithDerivedKey() throws {
+        try validateMessageEncryption(using: try deriveTestKey())
     }
 
 }
