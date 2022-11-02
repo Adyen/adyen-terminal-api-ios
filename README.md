@@ -76,6 +76,44 @@ To handle the response:
 2. After decoding, note the following:
    - The message object has a type of `Message<PaymentResponse>`, representing the Terminal API [SaleToPOIResponse](https://docs.adyen.com/point-of-sale/terminal-api-fundamentals#responses). 
    - The `header` and `body` properties of the `message` represent the [MessageHeader](https://docs.adyen.com/point-of-sale/terminal-api/terminal-api-reference#comadyennexomessageheader) and [PaymentResponse](https://docs.adyen.com/point-of-sale/terminal-api/terminal-api-reference#comadyennexopaymentresponse) body.
+   
+## Local Terminal API Integration
+
+If your integration uses local communications, you need to protect your integration against man-in-the-middle attacks, eavesdropping, and tampering. In order to do this, you need to do the following:
+- Validate the terminal certificate, to confirm your POS app is communicating directly with an Adyen-supplied payment terminal.
+- Encrypt communications. This prevents intruders from reading the messages transmitted between the POS app and the terminal.
+ 
+To help you with this, TerminalAPIKit provides the following helper functions:
+- Deriving the encryption key from the encryption parameters specified in the terminal settings in the Customer area.
+- Encrypting the messages passed between your terminal and iOS/macOS POS application.
+
+### Deriving the encryption key
+To derive the key used for encrypting the local communication between the terminal and your POS app, you need to do the following:
+```swift
+let encryptionKey = try EncryptionKey(
+    passphrase: "KEY_PASSPHRASE",
+    identifier: "KEY_IDENTIFIER",
+    version: KEY_VERSION
+)
+``` 
+The `passphrase`, `identifier` and `version` can be found in the terminal settings in the Customer Area, under Integrations -> Terminal API -> Encryption key. Pass them in a string form, exactly as they appear. Once the key is derived, you are ready to encrypt your local communication
+
+### Encrypting communications
+Once you have created your request in form of `Message<Request>`, you can encrypt it as follows (this applies to `PaymentRequest`):
+```swift
+let encryptionKey: EncryptionKey = // your key derived earlier
+let request: Message<PaymentRequest> = // the payment request previously created
+let encryptedMessage: Data = try request.encrypt(using: encryptionKey)
+```
+The `encryptedMessage` is now ready to be sent to the terminal.
+
+When you have received a response from the terminal, do the following:
+```swift
+let key: EncryptionKey = // key you derived earlier
+let response: Data = // the response you receive from the terminal
+let encryptedMessage: EncryptedMessage = try Coder.decode(EncryptedMessage.self, from: response)
+let decryptedMessage: Message<PaymentResponse> = try decrypt(PaymentRequest.self, using: key)
+```
 
 ## Requirements
 To use TerminalAPIKit for iOS, you need:
