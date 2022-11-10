@@ -2,6 +2,11 @@
 
 **TerminalAPIKit** for iOS helps with integrating Adyen's [Terminal API](https://docs.adyen.com/point-of-sale/terminal-api) into your iOS POS app. The kit provides the models to create a Terminal API `SaletoPOIRequest`, and to decode the received `SaletoPOIResponse`. For local Terminal API integrations, the kit also helps with protecting local communications.
 
+This package is intended to be used in following scenarios:
+- when integrating POS Mobile SDK
+- when integrating client-side with an Adyen terminal using local Terminal API
+- when integrating server-side with an Adyen terminal using cloud Terminal API
+
 ## Install TerminalAPIKit
 TerminalAPIKit for iOS is available through [Swift Package Manager](https://swift.org/package-manager/). 
 
@@ -119,7 +124,7 @@ Once the key is derived, you are ready to encrypt your local communications.
    let key: EncryptionKey = // the key you derived earlier
    let response: Data = // the response you receive from the terminal
    let encryptedMessage: EncryptedMessage = try Coder.decode(EncryptedMessage.self, from: response)
-   let decryptedMessage: Message<PaymentResponse> = try decrypt(PaymentRequest.self, using: key)
+   let decryptedMessage: Message<PaymentResponse> = try decrypt(PaymentResponse.self, using: key)
    ```
 
 ## Requirements
