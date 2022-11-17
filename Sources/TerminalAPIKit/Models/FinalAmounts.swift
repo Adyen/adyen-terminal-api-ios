@@ -13,19 +13,19 @@ public final class FinalAmounts: Codable {
     public let currency: String?
     
     /// Undocumented.
-    public let authorizedAmount: Double
+    public let authorizedAmount: Decimal
     
     /// Undocumented.
-    public let totalRebatesAmount: Double?
+    public let totalRebatesAmount: Decimal?
     
     /// Undocumented.
-    public let totalFeesAmount: Double?
+    public let totalFeesAmount: Decimal?
     
     /// Undocumented.
-    public let cashBackAmount: Double?
+    public let cashBackAmount: Decimal?
     
     /// Undocumented.
-    public let tipAmount: Double?
+    public let tipAmount: Decimal?
     
     /// Initializes the FinalAmounts.
     ///
@@ -35,7 +35,7 @@ public final class FinalAmounts: Codable {
     /// - Parameter totalFeesAmount: Undocumented.
     /// - Parameter cashBackAmount: Undocumented.
     /// - Parameter tipAmount: Undocumented.
-    public init(currency: String? = nil, authorizedAmount: Double, totalRebatesAmount: Double? = nil, totalFeesAmount: Double? = nil, cashBackAmount: Double? = nil, tipAmount: Double? = nil) {
+    public init(currency: String? = nil, authorizedAmount: Decimal, totalRebatesAmount: Decimal? = nil, totalFeesAmount: Decimal? = nil, cashBackAmount: Decimal? = nil, tipAmount: Decimal? = nil) {
         self.currency = currency
         self.authorizedAmount = authorizedAmount
         self.totalRebatesAmount = totalRebatesAmount

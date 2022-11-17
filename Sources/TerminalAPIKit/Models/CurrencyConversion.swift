@@ -18,13 +18,13 @@ public final class CurrencyConversion: Codable {
     public let convertedAmount: ConvertedAmount
     
     /// Undocumented.
-    public let rate: Double?
+    public let rate: Decimal?
     
     /// Undocumented.
-    public let markup: Double?
+    public let markup: Decimal?
     
     /// Undocumented.
-    public let commission: Double?
+    public let commission: Decimal?
     
     /// Declaration to present to the customer or the cashier for validation.
     public let declaration: String?
@@ -37,7 +37,7 @@ public final class CurrencyConversion: Codable {
     /// - Parameter markup: Undocumented.
     /// - Parameter commission: Undocumented.
     /// - Parameter declaration: Declaration to present to the customer or the cashier for validation.
-    public init(customerApprovedFlag: Bool? = nil, convertedAmount: ConvertedAmount, rate: Double? = nil, markup: Double? = nil, commission: Double? = nil, declaration: String? = nil) {
+    public init(customerApprovedFlag: Bool? = nil, convertedAmount: ConvertedAmount, rate: Decimal? = nil, markup: Decimal? = nil, commission: Decimal? = nil, declaration: String? = nil) {
         self.customerApprovedFlag = customerApprovedFlag
         self.convertedAmount = convertedAmount
         self.rate = rate

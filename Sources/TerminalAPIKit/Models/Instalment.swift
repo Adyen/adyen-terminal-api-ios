@@ -31,13 +31,13 @@ public final class Instalment: Codable {
     public let totalNbOfPayments: Int?
     
     /// Undocumented.
-    public let cumulativeAmount: Double?
+    public let cumulativeAmount: Decimal?
     
     /// Undocumented.
-    public let firstAmount: Double?
+    public let firstAmount: Decimal?
     
     /// Undocumented.
-    public let charges: Double?
+    public let charges: Decimal?
     
     /// Initializes the Instalment.
     ///
@@ -51,7 +51,7 @@ public final class Instalment: Codable {
     /// - Parameter cumulativeAmount: Undocumented.
     /// - Parameter firstAmount: Undocumented.
     /// - Parameter charges: Undocumented.
-    public init(instalmentType: InstalmentType? = nil, sequenceNumber: Int? = nil, planIdentifier: String? = nil, period: Int? = nil, periodUnit: PeriodUnit? = nil, firstPaymentDate: Date? = nil, totalNbOfPayments: Int? = nil, cumulativeAmount: Double? = nil, firstAmount: Double? = nil, charges: Double? = nil) {
+    public init(instalmentType: InstalmentType? = nil, sequenceNumber: Int? = nil, planIdentifier: String? = nil, period: Int? = nil, periodUnit: PeriodUnit? = nil, firstPaymentDate: Date? = nil, totalNbOfPayments: Int? = nil, cumulativeAmount: Decimal? = nil, firstAmount: Decimal? = nil, charges: Decimal? = nil) {
         self.instalmentType = instalmentType
         self.sequenceNumber = sequenceNumber
         self.planIdentifier = planIdentifier

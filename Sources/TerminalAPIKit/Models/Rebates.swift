@@ -10,7 +10,7 @@ import Foundation
 public final class Rebates: Codable {
     
     /// Undocumented.
-    public let totalRebate: Double?
+    public let totalRebate: Decimal?
     
     /// Undocumented.
     public let rebateLabel: String?
@@ -23,7 +23,7 @@ public final class Rebates: Codable {
     /// - Parameter totalRebate: Undocumented.
     /// - Parameter rebateLabel: Undocumented.
     /// - Parameter saleItemRebate: Undocumented.
-    public init(totalRebate: Double? = nil, rebateLabel: String? = nil, saleItemRebate: [SaleItemRebate]? = nil) {
+    public init(totalRebate: Decimal? = nil, rebateLabel: String? = nil, saleItemRebate: [SaleItemRebate]? = nil) {
         self.totalRebate = totalRebate
         self.rebateLabel = rebateLabel
         self.saleItemRebate = saleItemRebate

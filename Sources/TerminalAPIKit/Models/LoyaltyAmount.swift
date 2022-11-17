@@ -18,14 +18,14 @@ public final class LoyaltyAmount: Codable {
     public let currency: String?
     
     /// Undocumented.
-    public let amountValue: Double
+    public let amountValue: Decimal
     
     /// Initializes the LoyaltyAmount.
     ///
     /// - Parameter loyaltyUnit: Undocumented.
     /// - Parameter currency: Undocumented.
     /// - Parameter amountValue: Undocumented.
-    public init(loyaltyUnit: LoyaltyUnit? = nil, currency: String? = nil, amountValue: Double) {
+    public init(loyaltyUnit: LoyaltyUnit? = nil, currency: String? = nil, amountValue: Decimal) {
         self.loyaltyUnit = loyaltyUnit
         self.currency = currency
         self.amountValue = amountValue

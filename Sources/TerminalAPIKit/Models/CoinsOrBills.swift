@@ -12,7 +12,7 @@ import Foundation
 public final class CoinsOrBills: Codable {
     
     /// Value of a coin or bill.
-    public let unitValue: Double
+    public let unitValue: Decimal
     
     /// Number of elements
     public let number: Int
@@ -21,7 +21,7 @@ public final class CoinsOrBills: Codable {
     ///
     /// - Parameter unitValue: Value of a coin or bill.
     /// - Parameter number: Number of elements
-    public init(unitValue: Double, number: Int) {
+    public init(unitValue: Decimal, number: Int) {
         self.unitValue = unitValue
         self.number = number
     }

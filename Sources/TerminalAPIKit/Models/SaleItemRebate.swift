@@ -24,10 +24,10 @@ public final class SaleItemRebate: Codable {
     public let unitOfMeasure: UnitOfMeasure?
     
     /// Product quantity
-    public let quantity: Double?
+    public let quantity: Decimal?
     
     /// Total amount of the item line.
-    public let itemAmount: Double?
+    public let itemAmount: Decimal?
     
     /// Short text to qualify a rebate on an line item.
     public let rebateLabel: String?
@@ -41,7 +41,7 @@ public final class SaleItemRebate: Codable {
     /// - Parameter quantity: Product quantity
     /// - Parameter itemAmount: Total amount of the item line.
     /// - Parameter rebateLabel: Short text to qualify a rebate on an line item.
-    public init(itemIdentifier: Int, productCode: String, eanUpc: String? = nil, unitOfMeasure: UnitOfMeasure? = nil, quantity: Double? = nil, itemAmount: Double? = nil, rebateLabel: String? = nil) {
+    public init(itemIdentifier: Int, productCode: String, eanUpc: String? = nil, unitOfMeasure: UnitOfMeasure? = nil, quantity: Decimal? = nil, itemAmount: Decimal? = nil, rebateLabel: String? = nil) {
         self.itemIdentifier = itemIdentifier
         self.productCode = productCode
         self.eanUpc = eanUpc

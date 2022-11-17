@@ -13,7 +13,7 @@ public final class PaymentAccountStatus: Codable {
     public let paymentInstrumentData: PaymentInstrumentData?
     
     /// Undocumented.
-    public let currentBalance: Double?
+    public let currentBalance: Decimal?
     
     /// Undocumented.
     public let currency: String?
@@ -27,7 +27,7 @@ public final class PaymentAccountStatus: Codable {
     /// - Parameter currentBalance: Undocumented.
     /// - Parameter currency: Undocumented.
     /// - Parameter paymentAcquirerData: Undocumented.
-    public init(paymentInstrumentData: PaymentInstrumentData? = nil, currentBalance: Double? = nil, currency: String? = nil, paymentAcquirerData: PaymentAcquirerData? = nil) {
+    public init(paymentInstrumentData: PaymentInstrumentData? = nil, currentBalance: Decimal? = nil, currency: String? = nil, paymentAcquirerData: PaymentAcquirerData? = nil) {
         self.paymentInstrumentData = paymentInstrumentData
         self.currentBalance = currentBalance
         self.currency = currency
