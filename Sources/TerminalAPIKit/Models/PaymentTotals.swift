@@ -17,14 +17,14 @@ public final class PaymentTotals: Codable {
     public let transactionCount: Int
     
     /// Sum of amount of processed transaction during the period.
-    public let transactionAmount: Double
+    public let transactionAmount: Decimal
     
     /// Initializes the PaymentTotals.
     ///
     /// - Parameter transactionType: Type of transaction for which totals are grouped.
     /// - Parameter transactionCount: Number of processed transaction during the period.
     /// - Parameter transactionAmount: Sum of amount of processed transaction during the period.
-    public init(transactionType: TransactionType, transactionCount: Int, transactionAmount: Double) {
+    public init(transactionType: TransactionType, transactionCount: Int, transactionAmount: Decimal) {
         self.transactionType = transactionType
         self.transactionCount = transactionCount
         self.transactionAmount = transactionAmount

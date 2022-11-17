@@ -13,7 +13,7 @@ public final class LoyaltyAccountStatus: Codable {
     public let loyaltyAccount: LoyaltyAccount
     
     /// Undocumented.
-    public let currentBalance: Double?
+    public let currentBalance: Decimal?
     
     /// Undocumented.
     public let loyaltyUnit: LoyaltyUnit?
@@ -27,7 +27,7 @@ public final class LoyaltyAccountStatus: Codable {
     /// - Parameter currentBalance: Undocumented.
     /// - Parameter loyaltyUnit: Undocumented.
     /// - Parameter currency: Undocumented.
-    public init(loyaltyAccount: LoyaltyAccount, currentBalance: Double? = nil, loyaltyUnit: LoyaltyUnit? = nil, currency: String? = nil) {
+    public init(loyaltyAccount: LoyaltyAccount, currentBalance: Decimal? = nil, loyaltyUnit: LoyaltyUnit? = nil, currency: String? = nil) {
         self.loyaltyAccount = loyaltyAccount
         self.currentBalance = currentBalance
         self.loyaltyUnit = loyaltyUnit

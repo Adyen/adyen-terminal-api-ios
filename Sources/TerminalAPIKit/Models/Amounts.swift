@@ -13,25 +13,25 @@ public final class Amounts: Codable {
     public let currency: String
     
     /// Undocumented.
-    public let requestedAmount: Double?
+    public let requestedAmount: Decimal?
     
     /// Undocumented.
-    public let cashBackAmount: Double?
+    public let cashBackAmount: Decimal?
     
     /// Undocumented.
-    public let tipAmount: Double?
+    public let tipAmount: Decimal?
     
     /// Undocumented.
-    public let paidAmount: Double?
+    public let paidAmount: Decimal?
     
     /// Undocumented.
-    public let minimumAmountToDeliver: Double?
+    public let minimumAmountToDeliver: Decimal?
     
     /// Undocumented.
-    public let maximumCashBackAmount: Double?
+    public let maximumCashBackAmount: Decimal?
     
     /// Undocumented.
-    public let minimumSplitAmount: Double?
+    public let minimumSplitAmount: Decimal?
     
     /// Initializes the Amounts.
     ///
@@ -43,7 +43,7 @@ public final class Amounts: Codable {
     /// - Parameter minimumAmountToDeliver: Undocumented.
     /// - Parameter maximumCashBackAmount: Undocumented.
     /// - Parameter minimumSplitAmount: Undocumented.
-    public init(currency: String, requestedAmount: Double? = nil, cashBackAmount: Double? = nil, tipAmount: Double? = nil, paidAmount: Double? = nil, minimumAmountToDeliver: Double? = nil, maximumCashBackAmount: Double? = nil, minimumSplitAmount: Double? = nil) {
+    public init(currency: String, requestedAmount: Decimal? = nil, cashBackAmount: Decimal? = nil, tipAmount: Decimal? = nil, paidAmount: Decimal? = nil, minimumAmountToDeliver: Decimal? = nil, maximumCashBackAmount: Decimal? = nil, minimumSplitAmount: Decimal? = nil) {
         self.currency = currency
         self.requestedAmount = requestedAmount
         self.cashBackAmount = cashBackAmount

@@ -21,7 +21,7 @@ public final class StoredValueResult: Codable {
     public let eanUpc: String?
     
     /// Total amount of the item line.
-    public let itemAmount: Double?
+    public let itemAmount: Decimal?
     
     /// Currency of a monetary amount.
     public let currency: String?
@@ -37,7 +37,7 @@ public final class StoredValueResult: Codable {
     /// - Parameter itemAmount: Total amount of the item line.
     /// - Parameter currency: Currency of a monetary amount.
     /// - Parameter storedValueAccountStatus: Data related to the result of the stored value card transaction.
-    public init(storedValueTransactionType: StoredValueTransactionType, productCode: String? = nil, eanUpc: String? = nil, itemAmount: Double? = nil, currency: String? = nil, storedValueAccountStatus: StoredValueAccountStatus? = nil) {
+    public init(storedValueTransactionType: StoredValueTransactionType, productCode: String? = nil, eanUpc: String? = nil, itemAmount: Decimal? = nil, currency: String? = nil, storedValueAccountStatus: StoredValueAccountStatus? = nil) {
         self.storedValueTransactionType = storedValueTransactionType
         self.productCode = productCode
         self.eanUpc = eanUpc

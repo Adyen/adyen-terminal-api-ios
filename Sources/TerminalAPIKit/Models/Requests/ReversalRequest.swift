@@ -27,7 +27,7 @@ public final class ReversalRequest: Request {
     public let originalPOITransaction: OriginalPOITransaction
     
     /// Amount of the payment or loyalty to reverse..
-    public let reversedAmount: Double?
+    public let reversedAmount: Decimal?
     
     /// Reason of the payment or loyalty reversal..
     public let reversalReason: ReversalReason
@@ -42,7 +42,7 @@ public final class ReversalRequest: Request {
     /// - Parameter reversedAmount: Amount of the payment or loyalty to reverse..
     /// - Parameter reversalReason: Reason of the payment or loyalty reversal..
     /// - Parameter customerOrder: Undocumented.
-    public init(saleData: SaleData? = nil, originalPOITransaction: OriginalPOITransaction, reversedAmount: Double? = nil, reversalReason: ReversalReason, customerOrder: CustomerOrder? = nil) {
+    public init(saleData: SaleData? = nil, originalPOITransaction: OriginalPOITransaction, reversedAmount: Decimal? = nil, reversalReason: ReversalReason, customerOrder: CustomerOrder? = nil) {
         self.saleData = saleData
         self.originalPOITransaction = originalPOITransaction
         self.reversedAmount = reversedAmount

@@ -10,7 +10,7 @@ import Foundation
 public final class ConvertedAmount: Codable {
     
     /// Undocumented.
-    public let amountValue: Double
+    public let amountValue: Decimal
     
     /// Undocumented.
     public let currency: String
@@ -19,7 +19,7 @@ public final class ConvertedAmount: Codable {
     ///
     /// - Parameter amountValue: Undocumented.
     /// - Parameter currency: Undocumented.
-    public init(amountValue: Double, currency: String) {
+    public init(amountValue: Decimal, currency: String) {
         self.amountValue = amountValue
         self.currency = currency
     }

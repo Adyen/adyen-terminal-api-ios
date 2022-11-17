@@ -33,7 +33,7 @@ public final class OriginalPOITransaction: Codable {
     public let acquirerIdentifier: String?
     
     /// Undocumented.
-    public let amountValue: Double?
+    public let amountValue: Decimal?
     
     /// Identification of the transaction by the host in charge of the stored value transaction
     public let hostTransactionIdentifier: TransactionIdentifier?
@@ -49,7 +49,7 @@ public final class OriginalPOITransaction: Codable {
     /// - Parameter acquirerIdentifier: Undocumented.
     /// - Parameter amountValue: Undocumented.
     /// - Parameter hostTransactionIdentifier: Identification of the transaction by the host in charge of the stored value transaction
-    public init(saleIdentifier: String? = nil, poiIdentifier: String? = nil, poiTransactionIdentifier: TransactionIdentifier? = nil, reuseCardDataFlag: Bool? = nil, approvalCode: String? = nil, customerLanguage: String? = nil, acquirerIdentifier: String? = nil, amountValue: Double? = nil, hostTransactionIdentifier: TransactionIdentifier? = nil) {
+    public init(saleIdentifier: String? = nil, poiIdentifier: String? = nil, poiTransactionIdentifier: TransactionIdentifier? = nil, reuseCardDataFlag: Bool? = nil, approvalCode: String? = nil, customerLanguage: String? = nil, acquirerIdentifier: String? = nil, amountValue: Decimal? = nil, hostTransactionIdentifier: TransactionIdentifier? = nil) {
         self.saleIdentifier = saleIdentifier
         self.poiIdentifier = poiIdentifier
         self.poiTransactionIdentifier = poiTransactionIdentifier

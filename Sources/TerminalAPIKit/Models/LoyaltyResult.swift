@@ -15,7 +15,7 @@ public final class LoyaltyResult: Codable {
     public let loyaltyAccount: LoyaltyAccount
     
     /// Balance of an account.
-    public let currentBalance: Double?
+    public let currentBalance: Decimal?
     
     /// Amount of a loyalty account.
     public let loyaltyAmount: LoyaltyAmount?
@@ -33,7 +33,7 @@ public final class LoyaltyResult: Codable {
     /// - Parameter loyaltyAmount: Amount of a loyalty account.
     /// - Parameter loyaltyAcquirerData: Data related to the loyalty Acquirer during a loyalty transaction.
     /// - Parameter rebates: Rebate form to an award;
-    public init(loyaltyAccount: LoyaltyAccount, currentBalance: Double? = nil, loyaltyAmount: LoyaltyAmount? = nil, loyaltyAcquirerData: LoyaltyAcquirerData? = nil, rebates: Rebates? = nil) {
+    public init(loyaltyAccount: LoyaltyAccount, currentBalance: Decimal? = nil, loyaltyAmount: LoyaltyAmount? = nil, loyaltyAcquirerData: LoyaltyAcquirerData? = nil, rebates: Rebates? = nil) {
         self.loyaltyAccount = loyaltyAccount
         self.currentBalance = currentBalance
         self.loyaltyAmount = loyaltyAmount

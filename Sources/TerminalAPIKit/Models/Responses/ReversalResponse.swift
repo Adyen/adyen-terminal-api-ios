@@ -24,7 +24,7 @@ public final class ReversalResponse: Response {
     public let originalPOITransaction: OriginalPOITransaction?
     
     /// Amount of the payment or loyalty to reverse..
-    public let reversedAmount: Double?
+    public let reversedAmount: Decimal?
     
     /// Undocumented.
     public let customerOrder: [CustomerOrder]?
@@ -44,7 +44,7 @@ public final class ReversalResponse: Response {
         response: MessageResponse,
         poiData: POIData? = nil,
         originalPOITransaction: OriginalPOITransaction? = nil,
-        reversedAmount: Double? = nil,
+        reversedAmount: Decimal? = nil,
         customerOrder: [CustomerOrder]? = nil,
         paymentReceipt: [PaymentReceipt]? = nil
     ) {
