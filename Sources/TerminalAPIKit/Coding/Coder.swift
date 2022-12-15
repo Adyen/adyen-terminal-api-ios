@@ -23,8 +23,10 @@ public enum Coder {
     
     private static let encoder: JSONEncoder = {
         let encoder = JSONEncoder()
+        
+        // Encode dates with YYYY-MM-DDTHH:MM:SS.sssZZZZZZ
         encoder.dateEncodingStrategy = .custom { date, encoder in
-            let string = isoDateFormatter.string(from: date)
+            let string = isoDateFormatterWithFractionalSeconds.string(from: date)
             
             var container = encoder.singleValueContainer()
             try container.encode(string)
@@ -52,11 +54,18 @@ public enum Coder {
             let container = try decoder.singleValueContainer()
             let string = try container.decode(String.self)
             
-            guard let date = isoDateFormatter.date(from: string) else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Date is not a valid ISO8601-formatted date.")
+            // We decode dates from ISO8601
+            // If that fails - we use ISO8601 with fractional seconds
+            if let date = isoDateFormatter.date(from: string) {
+                return date
+            } else if let date = isoDateFormatterWithFractionalSeconds.date(from: string) {
+                return date
+            } else {
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Date is not a valid ISO8601-formatted date."
+                )
             }
-            
-            return date
         }
         
         return decoder
@@ -64,13 +73,14 @@ public enum Coder {
     
     // MARK: - Date Formatter
     
-    private static let isoDateFormatter: ISO8601DateFormatter = {
+    // Default isoDateFormatter
+    // For strings like `2022-09-02T10:58:00Z` or `2022-09-02T10:58:00+02:00`
+    private static let isoDateFormatter: ISO8601DateFormatter = .init()
+    
+    // For strings like `2022-09-02T10:58:00.000Z` or `2022-09-02T10:58:00.000+02:00`
+    private static let isoDateFormatterWithFractionalSeconds: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [
-            .withYear, .withMonth, .withDay,
-            .withTime, .withTimeZone, .withDashSeparatorInDate,
-            .withColonSeparatorInTime, .withColonSeparatorInTimeZone, .withFractionalSeconds
-        ]
+        formatter.formatOptions.insert(.withFractionalSeconds)
         return formatter
     }()
     
