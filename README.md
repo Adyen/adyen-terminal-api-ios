@@ -1,6 +1,6 @@
 # Adyen Terminal API for iOS
 
-**TerminalAPIKit** for iOS helps with integrating Adyen's [Terminal API](https://docs.adyen.com/point-of-sale/terminal-api) into your iOS POS app. The kit provides the models to create a Terminal API `SaletoPOIRequest`, and to decode the received `SaletoPOIResponse`. For local Terminal API integrations, the kit also helps with protecting local communications.
+**TerminalAPIKit** for iOS helps with integrating Adyen's [Terminal API](https://docs.adyen.com/point-of-sale/design-your-integration/terminal-api) into your iOS POS app. The kit provides the models to create a Terminal API `SaletoPOIRequest`, and to decode the received `SaletoPOIResponse`. For local Terminal API integrations, the kit also helps with protecting local communications.
 
 This package is intended to be used in the following scenarios:
 - when integrating POS Mobile SDK.
