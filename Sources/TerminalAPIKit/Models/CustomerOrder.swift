@@ -25,10 +25,10 @@ public final class CustomerOrder: Codable {
     public let endDate: Date?
     
     /// Undocumented.
-    public let forecastedAmount: Double
+    public let forecastedAmount: Decimal
     
     /// Undocumented.
-    public let currentAmount: Double
+    public let currentAmount: Decimal
     
     /// Undocumented.
     public let currency: String?
@@ -51,7 +51,7 @@ public final class CustomerOrder: Codable {
     /// - Parameter currency: Undocumented.
     /// - Parameter accessedBy: Undocumented.
     /// - Parameter additionalInformation: Undocumented.
-    public init(customerOrderIdentifier: String? = nil, saleReferenceIdentifier: String, openOrderState: Bool? = nil, startDate: Date, endDate: Date? = nil, forecastedAmount: Double, currentAmount: Double, currency: String? = nil, accessedBy: String? = nil, additionalInformation: String? = nil) {
+    public init(customerOrderIdentifier: String? = nil, saleReferenceIdentifier: String, openOrderState: Bool? = nil, startDate: Date, endDate: Date? = nil, forecastedAmount: Decimal, currentAmount: Decimal, currency: String? = nil, accessedBy: String? = nil, additionalInformation: String? = nil) {
         self.customerOrderIdentifier = customerOrderIdentifier
         self.saleReferenceIdentifier = saleReferenceIdentifier
         self.openOrderState = openOrderState

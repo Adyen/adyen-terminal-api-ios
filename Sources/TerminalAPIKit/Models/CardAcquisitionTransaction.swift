@@ -25,7 +25,7 @@ public final class CardAcquisitionTransaction: Codable {
     public let forceCustomerSelectionFlag: Bool?
     
     /// Undocumented.
-    public let totalAmount: Double?
+    public let totalAmount: Decimal?
     
     /// Undocumented.
     public let paymentType: PaymentType?
@@ -43,7 +43,7 @@ public final class CardAcquisitionTransaction: Codable {
     /// - Parameter totalAmount: Undocumented.
     /// - Parameter paymentType: Undocumented.
     /// - Parameter cashBackFlag: Undocumented.
-    public init(allowedPaymentBrand: [String]? = nil, allowedLoyaltyBrand: [String]? = nil, loyaltyHandling: LoyaltyHandling? = nil, forceEntryMode: Set<ForceEntryMode>? = nil, forceCustomerSelectionFlag: Bool? = nil, totalAmount: Double? = nil, paymentType: PaymentType? = nil, cashBackFlag: Bool? = nil) {
+    public init(allowedPaymentBrand: [String]? = nil, allowedLoyaltyBrand: [String]? = nil, loyaltyHandling: LoyaltyHandling? = nil, forceEntryMode: Set<ForceEntryMode>? = nil, forceCustomerSelectionFlag: Bool? = nil, totalAmount: Decimal? = nil, paymentType: PaymentType? = nil, cashBackFlag: Bool? = nil) {
         self.allowedPaymentBrand = allowedPaymentBrand
         self.allowedLoyaltyBrand = allowedLoyaltyBrand
         self.loyaltyHandling = loyaltyHandling

@@ -24,13 +24,13 @@ public final class SaleItem: Codable {
     public let unitOfMeasure: UnitOfMeasure?
     
     /// Product quantity
-    public let quantity: Double?
+    public let quantity: Decimal?
     
     /// Price per unit of product
-    public let unitPrice: Double?
+    public let unitPrice: Decimal?
     
     /// Total amount of the item line.
-    public let itemAmount: Double
+    public let itemAmount: Decimal
     
     /// Type of taxes associated to the line item.
     public let taxCode: String?
@@ -57,7 +57,7 @@ public final class SaleItem: Codable {
     /// - Parameter saleChannel: Commercial or distribution channel associated to the line item.
     /// - Parameter productLabel: Undocumented.
     /// - Parameter additionalProductInfo: Additionl information related to the line item.
-    public init(itemIdentifier: Int, productCode: String, eanUpc: String? = nil, unitOfMeasure: UnitOfMeasure? = nil, quantity: Double? = nil, unitPrice: Double? = nil, itemAmount: Double, taxCode: String? = nil, saleChannel: String? = nil, productLabel: String? = nil, additionalProductInfo: String? = nil) {
+    public init(itemIdentifier: Int, productCode: String, eanUpc: String? = nil, unitOfMeasure: UnitOfMeasure? = nil, quantity: Decimal? = nil, unitPrice: Decimal? = nil, itemAmount: Decimal, taxCode: String? = nil, saleChannel: String? = nil, productLabel: String? = nil, additionalProductInfo: String? = nil) {
         self.itemIdentifier = itemIdentifier
         self.productCode = productCode
         self.eanUpc = eanUpc

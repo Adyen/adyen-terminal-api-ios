@@ -25,7 +25,7 @@ public final class PerformedTransaction: Codable {
     public let loyaltyResult: [LoyaltyResult]?
     
     /// Undocumented.
-    public let reversedAmount: Double?
+    public let reversedAmount: Decimal?
     
     /// Initializes the PerformedTransaction.
     ///
@@ -35,7 +35,7 @@ public final class PerformedTransaction: Codable {
     /// - Parameter paymentResult: Undocumented.
     /// - Parameter loyaltyResult: Undocumented.
     /// - Parameter reversedAmount: Undocumented.
-    public init(response: MessageResponse, saleData: SaleData? = nil, poiData: POIData? = nil, paymentResult: PaymentResult? = nil, loyaltyResult: [LoyaltyResult]? = nil, reversedAmount: Double? = nil) {
+    public init(response: MessageResponse, saleData: SaleData? = nil, poiData: POIData? = nil, paymentResult: PaymentResult? = nil, loyaltyResult: [LoyaltyResult]? = nil, reversedAmount: Decimal? = nil) {
         self.response = response
         self.saleData = saleData
         self.poiData = poiData
