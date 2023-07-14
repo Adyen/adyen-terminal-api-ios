@@ -129,7 +129,7 @@ Once the key is derived, you are ready to encrypt your local communications.
 
 ## Requirements
 To use TerminalAPIKit for iOS, you need:
-- iOS 13.0 or later
+- iOS 12.0 or later
 - Xcode 13.4 or later
 - Swift 5.6
 

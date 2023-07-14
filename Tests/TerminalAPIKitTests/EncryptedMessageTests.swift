@@ -12,8 +12,15 @@ import CryptoKit
 final class EncryptedMessageTests: XCTestCase {
     
     func generateTestKey() -> EncryptionKey {
-        let hmacKey = SymmetricKey(size: .bits256)
-        let aesKey = SymmetricKey(size: .bits256)
+        let hmacKey: ContiguousBytes
+        let aesKey: ContiguousBytes
+        if #available(iOS 13.0, *) {
+            hmacKey = SymmetricKey(size: .bits256)
+            aesKey = SymmetricKey(size: .bits256)
+        } else {
+            hmacKey = Data(count: 256 / 8)
+            aesKey = Data(count: 256 / 8)
+        }
         let nonce = Data(secureRandomBytesWithCount: 16)!
         var data = Data(capacity: 80)
         
