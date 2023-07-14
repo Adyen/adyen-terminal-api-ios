@@ -116,9 +116,10 @@ Once the key is derived, you are ready to encrypt your local communications.
    ```swift
    let encryptionKey: EncryptionKey = // the key you derived earlier
    let request: Message<PaymentRequest> = // the payment request you created
-   let encryptedMessage: Data = try request.encrypt(using: encryptionKey)
+   let encryptedMessage: EncryptedMessage = try request.encrypt(using: encryptionKey)
+   let json: Data = try Coder.encode(encryptedMessage)
    ```
-3. Send the `encryptedMessage` to the terminal.
+3. Send the `json` to the terminal.
 4. When you receive the response from the terminal, decrypt the response.
    ```swift
    let key: EncryptionKey = // the key you derived earlier
