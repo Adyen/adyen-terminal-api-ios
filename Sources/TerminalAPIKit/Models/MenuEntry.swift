@@ -15,29 +15,38 @@ public final class MenuEntry: Codable {
     public let menuEntryTag: MenuEntryTag?
     
     /// Undocumented.
-    public let defaultSelectedFlag: Bool
+    public let defaultSelectedFlag: Bool?
     
-    /// Undocumented.
+    /// Format of the content to display or print.
     public let outputFormat: OutputFormat
     
-    /// Undocumented.
+    /// Reference of a predefined message to display or print.
     public let predefinedContent: PredefinedContent?
     
-    /// Undocumented.
+    /// Content of text message to display or print.
+    /// Mandatory, if OutputFormat is Text, not allowed otherwise. One instance of OutputText per shared format.
     public let outputText: [OutputText]?
     
-    /// Undocumented.
+    /// XHTML document body containing the message to display or print.
+    /// Mandatory, if OutputFormat is XHTML, not allowed otherwise.
     public let outputXHTML: Data?
     
     /// Initializes the MenuEntry.
     ///
     /// - Parameter menuEntryTag: Characteristics related to the selection of a menu entry
     /// - Parameter defaultSelectedFlag: Undocumented.
-    /// - Parameter outputFormat: Undocumented.
-    /// - Parameter predefinedContent: Undocumented.
-    /// - Parameter outputText: Undocumented.
-    /// - Parameter outputXHTML: Undocumented.
-    public init(menuEntryTag: MenuEntryTag? = nil, defaultSelectedFlag: Bool, outputFormat: OutputFormat, predefinedContent: PredefinedContent? = nil, outputText: [OutputText]? = nil, outputXHTML: Data? = nil) {
+    /// - Parameter outputFormat: Format of the content to display or print.
+    /// - Parameter predefinedContent: Reference of a predefined message to display or print.
+    /// - Parameter outputText: Content of text message to display or print. Mandatory, if `outputFormat` is `text`, not allowed otherwise. One instance of `OutputText` per shared format.
+    /// - Parameter outputXHTML: XHTML document body containing the message to display or print. Mandatory, if `outputFormat` is `xhtml`, not allowed otherwise.
+    public init(
+        menuEntryTag: MenuEntryTag? = nil,
+        defaultSelectedFlag: Bool? = nil,
+        outputFormat: OutputFormat,
+        predefinedContent: PredefinedContent? = nil,
+        outputText: [OutputText]?,
+        outputXHTML: Data? = nil
+    ) {
         self.menuEntryTag = menuEntryTag
         self.defaultSelectedFlag = defaultSelectedFlag
         self.outputFormat = outputFormat
