@@ -30,8 +30,7 @@ public final class InputRequest: Request {
     ///
     /// - Parameter inputData: Information related to an Input request.
     /// - Parameter displayOutput: Information to display and the way to process the display.
-
-    public init(inputData: InputData, displayOutput: DisplayOutput?) {
+    public init(inputData: InputData, displayOutput: DisplayOutput? = nil) {
         self.inputData = inputData
         self.displayOutput = displayOutput
     }
