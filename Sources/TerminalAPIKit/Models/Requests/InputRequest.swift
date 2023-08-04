@@ -23,15 +23,21 @@ public final class InputRequest: Request {
     /// Information related to an Input request.
     public let inputData: InputData
     
+    /// Information to display and the way to process the display.
+    public let displayOutput: DisplayOutput?
+    
     /// Initializes the InputRequest.
     ///
     /// - Parameter inputData: Information related to an Input request.
-    public init(inputData: InputData) {
+    /// - Parameter displayOutput: Information to display and the way to process the display.
+    public init(inputData: InputData, displayOutput: DisplayOutput? = nil) {
         self.inputData = inputData
+        self.displayOutput = displayOutput
     }
     
     internal enum CodingKeys: String, CodingKey {
         case inputData = "InputData"
+        case displayOutput = "DisplayOutput"
     }
     
 }
