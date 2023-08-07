@@ -27,8 +27,8 @@ public final class Input: Codable {
     /// Undocumented.
     public let password: [UInt8]?
     
-    /// Undocumented.
-    public let menuEntryNumber: Int?
+    /// Shows which option was selected. A value of 1 means selected, 0 means not selected..
+    public let menuEntryNumber: [Int]?
     
     /// Initializes the Input.
     ///
@@ -39,7 +39,7 @@ public final class Input: Codable {
     /// - Parameter digitInput: Undocumented.
     /// - Parameter password: Undocumented.
     /// - Parameter menuEntryNumber: Undocumented.
-    public init(inputCommand: InputCommand, confirmedFlag: Bool? = nil, functionKey: String? = nil, textInput: String? = nil, digitInput: String? = nil, password: [UInt8]? = nil, menuEntryNumber: Int? = nil) {
+    public init(inputCommand: InputCommand, confirmedFlag: Bool? = nil, functionKey: String? = nil, textInput: String? = nil, digitInput: String? = nil, password: [UInt8]? = nil, menuEntryNumber: [Int]? = nil) {
         self.inputCommand = inputCommand
         self.confirmedFlag = confirmedFlag
         self.functionKey = functionKey
