@@ -13,7 +13,7 @@ public final class SessionContainer: Codable {
     public let session:Session
     public let operation:[Operation]?
     
-    public init(session: Session, operation: [Operation]?) {
+    public init(session: Session, operation: [Operation]? = nil) {
         self.session = session
         self.operation = operation
     }
