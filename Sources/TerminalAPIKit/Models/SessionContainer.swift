@@ -10,9 +10,13 @@
 import Foundation
 
 public final class SessionContainer: Codable {
-    public let session:Session
-    public let operation:[Operation]?
+    public let session: Session
+    public let operation: [Operation]?
     
+    /// Initializes the SessionContainer.
+    ///
+    /// - Parameter session: Undocumented.
+    /// - Parameter operation: Undocumented.
     public init(session: Session, operation: [Operation]? = nil) {
         self.session = session
         self.operation = operation

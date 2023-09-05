@@ -9,13 +9,17 @@ import Foundation
 
 public final class Session: Codable {
     
-    /// the unique reference of the session.
+    /// The unique reference of the session.
     public let id: Int
     
-    /// set the value to Begin to start the session, set the value to End to end the session.
+    /// The type of the transaction. Use ``SessionType/Begin`` to start a session, and ``SessionType/End`` to end the session.
     public let type: SessionType
     
-    public init(id:Int, type:SessionType) {
+    /// Initializes the Session.
+    ///
+    /// - Parameter id: Undocumented.
+    /// - Parameter type: Undocumented.
+    public init(id: Int, type: SessionType) {
         self.id = id
         self.type = type;
     }

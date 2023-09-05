@@ -9,10 +9,13 @@ import Foundation
 
 public final class UserInterfaceData: Codable {
 
-    /// how long the waiting screen is shown on the terminal display, in milliseconds.
-    public let waitingScreenTimeoutMs:Int
+    /// How long the waiting screen is shown on the terminal display, in milliseconds.
+    public let waitingScreenTimeoutMs: Int
     
-    public init(waitingScreenTimeoutMs:Int) {
+    /// Initializes the UserInterfaceData.
+    ///
+    /// - Parameter waitingScreenTimeoutMs: Undocumented.
+    public init(waitingScreenTimeoutMs: Int) {
         self.waitingScreenTimeoutMs = waitingScreenTimeoutMs
     }
     
