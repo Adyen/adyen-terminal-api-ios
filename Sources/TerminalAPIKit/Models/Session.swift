@@ -2,7 +2,7 @@
 //  Session.swift
 //  TerminalAPIKit
 //
-//  Created by Andrew Gates on 8/8/23.
+//  Copyright (c) 2023 Adyen N.V.
 //
 
 import Foundation
@@ -17,8 +17,8 @@ public final class Session: Codable {
     
     /// Initializes the Session.
     ///
-    /// - Parameter id: Undocumented.
-    /// - Parameter type: Undocumented.
+    /// - Parameter id: the unique reference of the session.
+    /// - Parameter type: the type of session.
     public init(id: Int, type: SessionType) {
         self.id = id
         self.type = type;

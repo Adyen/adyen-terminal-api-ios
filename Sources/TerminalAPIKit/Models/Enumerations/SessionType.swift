@@ -2,7 +2,7 @@
 //  SessionType.swift
 //  TerminalAPIKit
 //
-//  Created by Andrew Gates on 8/8/23.
+//  Copyright (c) 2023 Adyen N.V.
 //
 
 import Foundation

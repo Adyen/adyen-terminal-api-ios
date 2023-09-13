@@ -2,7 +2,7 @@
 //  SessionContainer.swift
 //  TerminalAPIKit
 //
-//  Created by Andrew Gates on 8/8/23.
+//  Copyright (c) 2023 Adyen N.V.
 //
 // Used in AdminRequests
 // https://docs.adyen.com/point-of-sale/shopper-engagement/create-session/
@@ -15,8 +15,8 @@ public final class SessionContainer: Codable {
     
     /// Initializes the SessionContainer.
     ///
-    /// - Parameter session: Undocumented.
-    /// - Parameter operation: Undocumented.
+    /// - Parameter session: The session.
+    /// - Parameter operation: The operation.
     public init(session: Session, operation: [Operation]? = nil) {
         self.session = session
         self.operation = operation
