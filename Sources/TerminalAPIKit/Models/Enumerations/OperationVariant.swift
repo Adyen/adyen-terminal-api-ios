@@ -2,7 +2,7 @@
 //  OperationVariant.swift
 //  
 //
-//  Created by Andrew on 9/5/23.
+//  Copyright (c) 2023 Adyen N.V.
 //
 
 import Foundation

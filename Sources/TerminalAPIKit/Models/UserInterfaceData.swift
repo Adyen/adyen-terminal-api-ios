@@ -2,7 +2,7 @@
 //  UserInterfaceData.swift
 //  TerminalAPIKit
 //
-//  Created by Andrew Gates on 8/8/23.
+//  Copyright (c) 2023 Adyen N.V.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ public final class UserInterfaceData: Codable {
     
     /// Initializes the UserInterfaceData.
     ///
-    /// - Parameter waitingScreenTimeoutMs: Undocumented.
+    /// - Parameter waitingScreenTimeoutMs: how long the waiting screen is shown on the terminal display, in milliseconds.
     public init(waitingScreenTimeoutMs: Int) {
         self.waitingScreenTimeoutMs = waitingScreenTimeoutMs
     }
