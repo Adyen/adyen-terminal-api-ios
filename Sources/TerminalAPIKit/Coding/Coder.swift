@@ -23,6 +23,7 @@ public enum Coder {
     
     private static let encoder: JSONEncoder = {
         let encoder = JSONEncoder()
+        encoder.outputFormatting = .sortedKeys
         
         // Encode dates with YYYY-MM-DDTHH:MM:SS.sssZZZZZZ
         encoder.dateEncodingStrategy = .custom { date, encoder in

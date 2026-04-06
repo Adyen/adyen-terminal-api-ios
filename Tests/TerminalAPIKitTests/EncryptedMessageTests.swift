@@ -71,27 +71,12 @@ final class EncryptedMessageTests: XCTestCase {
     
     func validateMessageEncryption(using key: EncryptionKey) throws {
         let initialMessage = try createPaymentRequest()
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .sortedKeys
-        encoder.dateEncodingStrategy = .custom { date, encoder in
-            var container = encoder.singleValueContainer()
-            let seconds = Int(date.timeIntervalSince1970)
-            try container.encode(seconds)
-        }
-
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom { decoder in
-            let container = try decoder.singleValueContainer()
-            let seconds = try container.decode(Int.self)
-            return Date(timeIntervalSince1970: TimeInterval(seconds))
-        }
-
-        let encodedInitialMessage = try encoder.encode(initialMessage)
+        let encodedInitialMessage = try Coder.encode(initialMessage)
         let encryptedMessage: EncryptedMessage = try initialMessage.encrypt(using: key)
-        let encodedEncryptedMessage: Data = try encoder.encode(encryptedMessage)
-        let decodedEncryptedMessage: EncryptedMessage = try decoder.decode(EncryptedMessage.self, from: encodedEncryptedMessage)
+        let encodedEncryptedMessage: Data = try Coder.encode(encryptedMessage)
+        let decodedEncryptedMessage: EncryptedMessage = try Coder.decode(EncryptedMessage.self, from: encodedEncryptedMessage)
         let decryptedMessage = try decodedEncryptedMessage.decrypt(PaymentRequest.self, using: key)
-        let encodedDecryptedMessage = try encoder.encode(decryptedMessage)
+        let encodedDecryptedMessage = try Coder.encode(decryptedMessage)
 
         XCTAssertEqual(encodedInitialMessage, encodedDecryptedMessage)
     }
