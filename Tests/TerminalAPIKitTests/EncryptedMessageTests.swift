@@ -77,7 +77,7 @@ final class EncryptedMessageTests: XCTestCase {
         let decodedEncryptedMessage: EncryptedMessage = try Coder.decode(EncryptedMessage.self, from: encodedEncryptedMessage)
         let decryptedMessage = try decodedEncryptedMessage.decrypt(PaymentRequest.self, using: key)
         let encodedDecryptedMessage = try Coder.encode(decryptedMessage)
-        
+
         XCTAssertEqual(encodedInitialMessage, encodedDecryptedMessage)
     }
 

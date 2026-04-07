@@ -71,22 +71,22 @@ public struct EncryptionKey {
     }
     
     // MARK: - Key Slices
-    
+
     /// The key used for HMAC operations.
-    internal var hmacKey: Data {
+    public var hmacKey: Data {
         return Data(data[hmacKeyRange])
     }
-    
-    /// The key used for AES operations.
-    internal var aesKey: Data {
-        return Data(data[aesKeyRange])
-    }
-    
+
     /// The initialization vector, used for AES operations.
-    internal var initializationVector: Data {
+    public var initializationVector: Data {
         return Data(data[initializationVectorRange])
     }
-    
+
+    /// The key used for AES operations.
+    public var aesKey: Data {
+        return Data(data[aesKeyRange])
+    }
+
     // MARK: - Key Slice Lengths & Ranges
     
     /// Length of the HMAC key.
