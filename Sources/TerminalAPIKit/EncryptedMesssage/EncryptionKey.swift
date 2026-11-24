@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-/// Describes errors that can happen during der
+/// Describes errors that can happen during key derivation.
 public struct KeyDerivationError: Error {
     
     /// The result code of the failed key derivation.
@@ -44,7 +44,7 @@ public struct EncryptionKey {
     
     // MARK: - Key derivation
     
-    /// Derives a key from given passhprage, identifier and version.
+    /// Derives a key from given passphrase, identifier and version.
     ///
     /// The `passphrase`, `identifier` and `version` can be found in the terminal settings in the Customer Area,
     /// under Integrations -> Terminal API -> Encryption key. Pass them in a string form, exactly as they appear.

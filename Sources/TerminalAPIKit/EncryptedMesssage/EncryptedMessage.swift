@@ -137,7 +137,7 @@ public extension EncryptedMessage {
     
 }
 
-/// An error that occured during the encryption of a message.
+/// An error that occurred during the encryption of a message.
 public enum MessageEncryptionError: Error {
     
     /// Failed to securely generate initialization vector modifier.
