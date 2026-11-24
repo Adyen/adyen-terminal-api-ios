@@ -41,7 +41,7 @@ public final class SaleItem: Codable {
     /// Undocumented.
     public let productLabel: String?
     
-    /// Additionl information related to the line item.
+    /// Additional information related to the line item.
     public let additionalProductInfo: String?
     
     /// Initializes the SaleItem.
@@ -56,7 +56,7 @@ public final class SaleItem: Codable {
     /// - Parameter taxCode: Type of taxes associated to the line item.
     /// - Parameter saleChannel: Commercial or distribution channel associated to the line item.
     /// - Parameter productLabel: Undocumented.
-    /// - Parameter additionalProductInfo: Additionl information related to the line item.
+    /// - Parameter additionalProductInfo: Additional information related to the line item.
     public init(itemIdentifier: Int, productCode: String, eanUpc: String? = nil, unitOfMeasure: UnitOfMeasure? = nil, quantity: Decimal? = nil, unitPrice: Decimal? = nil, itemAmount: Decimal, taxCode: String? = nil, saleChannel: String? = nil, productLabel: String? = nil, additionalProductInfo: String? = nil) {
         self.itemIdentifier = itemIdentifier
         self.productCode = productCode
